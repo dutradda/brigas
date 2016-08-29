@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+
+[...]
+
+<serviceList>
+ <service>
+  <serviceType>
+  urn:upnp-ic-ufal-br:service:GameManager:1
+  </serviceType>
+  <serviceId>GameManager</serviceId>
+  <SCPDURL>/GameManager/scpd.xml</SCPDURL>
+  <controlURL>/GameManager/control</controlURL>
+  <eventSubURL>/GameManager/eventSub</eventSubURL>
+  <presentationURL>
+  /GameManager/presentation
+  </presentationURL>
+ </service>
+ <service>
+  <serviceType>
+  urn:ic-ufal-br:service:Truco:1
+  </serviceType>
+  <serviceId>Truco</serviceId>
+  <SCPDURL>/Truco/scpd.xml</SCPDURL>
+  <controlURL>/Truco/control</controlURL>
+  <eventSubURL>/Truco/eventSub</eventSubURL>
+  <presentationURL>
+  /Truco/presentation
+  </presentationURL>
+ </service>
+</serviceList>
+
+[...]
+
+</root>

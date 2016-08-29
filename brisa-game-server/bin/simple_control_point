@@ -1,0 +1,179 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Licensed under the MIT license
+# http://opensource.org/licenses/mit-license.php or see LICENSE file.
+# Copyright 2007-2008 Brisa Team <brisa-develop@garage.maemo.org>
+
+# Inicializa servidor com 'reactor' padrão
+from brisa.core.reactors import install_default_reactor
+reactor = install_default_reactor()
+
+from brisa.upnp.control_point import ControlPoint
+from brisa.core.threaded_call import run_async_function
+
+game_manager = 'urn:ic-ufal-br:service:GameManager:1'
+
+devices = []
+
+def on_new_device(dev):
+  """
+  Callback que adiciona um novo 'device'
+  
+  @param dev: novo 'device' a ser incluido
+  
+  @type  dev: Device
+  """
+  t = dev.device_type
+  if 'GameServer' in t:
+    print 'Got new game server'
+
+  # Adiciona 'device' se seu udn não pertencer a nenhum
+  #  'device' da lista de 'devices'
+  if dev.udn not in [d.udn for d in devices]:
+      devices.append(dev)
+
+def on_removed_device(udn):
+    """
+    Callback que remove 'device' pela udn
+  
+    @param udn: identificador de 'device'
+  
+    @type  udn: str
+    """
+    print 'A game server gone'
+
+    for dev in devices:
+        if dev.udn == udn:
+            devices.remove(dev)
+
+def create():
+    """
+    Cria um 'ControlPoint' com callbacks anteriormente citadas
+     
+    @rtype: ControlPoint
+    """
+    c = ControlPoint()
+    c.subscribe('new_device_event', on_new_device)
+    c.subscribe('removed_device_event', on_removed_device)
+    return c
+
+
+def list_devices(devices):
+    """
+    Lista dispositivos com informacoes pertinentes
+ 
+    @param devices: 'devices' a serem listados
+     
+    @type  devices: list
+    """
+    count = 0
+    for d in devices:
+        print 'Device number: ', count
+        print 'UDN (id): ', d.udn
+        print 'Name: ', d.friendly_name
+        print 'Device type:', d.device_type
+        print 'Services:', d.services.keys()
+        print 'Embedded devices: ',\
+            [dev.friendly_name for dev in d.devices.values()]
+        print
+        count += 1
+
+def list_services(dev):
+    """
+    Lista servicos
+ 
+    @param dev: servicos a serem listados
+  
+    @type  dev: list
+    """
+    count = 0
+    for k, serv in dev.services.items():
+        print 'Service number: ', count
+        print 'Service id: ' + serv.id
+        print
+        count += 1
+
+def main():
+    """
+    Funcao que cria e inicializa servico do 'ControlPoint'
+    """
+    c = create()
+    c.start()
+    reactor.add_after_stop_func(c.stop)
+    run_async_function(run, (c, ))
+    reactor.main()
+
+def run(c):
+    """
+    Funcao com comandos basicos
+    """
+    uuid = ''
+    c.start_search(600)
+    while True:
+        try:
+            input = raw_input('>>> ')
+        except KeyboardInterrupt, EOFError:
+            break
+
+        if input == '':
+            print
+            continue
+
+        elif input == 'list':
+            list_devices(devices)
+
+        elif input == 'exit':
+            break
+
+        elif input == 'stop':
+            c.stop_search()
+
+        elif input == 'uuid':
+            device = devices[0]
+            service = device.services[game_manager]
+            uuid = service.GetUUID()['UUID']
+            print uuid
+
+        elif input == 'games':
+            device = devices[0]
+            service = device.services[game_manager]
+            print service.GetAvailableGames()
+
+        elif input == 'rooms':
+            device = devices[0]
+            service = device.services[game_manager]
+            print service.GetAvailableRooms(Game='Truco')
+
+        elif input.startswith('createroom'):
+            device = devices[0]
+            service = device.services[game_manager]
+            args = input.split(' ')
+            print service.CreateRoom(Game='Truco', UUID=uuid, MaxPlayers=args[1])
+
+        elif input.startswith('enterroom'):
+            device = devices[0]
+            service = device.services[game_manager]
+            args = input.split(' ')
+            print service.JoinRoom(Game='Truco', RoomID=args[1], UUID=uuid)
+
+        elif input.startswith('leaveroom'):
+            device = devices[0]
+            service = device.services[game_manager]
+            args = input.split(' ')
+            print service.LeaveRoom(Game='Truco', RoomID=args[1], UUID=uuid)
+
+        elif input == 'goodbye':
+            device = devices[0]
+            service = device.services[game_manager]
+            print service.GoodBye(UUID=uuid)
+
+        elif input == 'help':
+            print 'Commands available: list, exit, ' \
+            'stop, uuid, games, rooms, createroom, enterroom N, goodbye, help'
+
+    reactor.main_quit()
+
+# Chamada da 'main' do programa
+if __name__ == '__main__':
+    main()

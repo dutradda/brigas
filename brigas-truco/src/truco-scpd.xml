@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>0</minor>
+    </specVersion>
+    <actionList>
+        <action>
+            <name>ThrowCard</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>CardID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_CardID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>GiveUpOfHand</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>AcceptElevenHand</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>AcceptIronHand</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>Truco</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>AcceptTruco</name>
+            <argumentList>
+                <argument>
+                    <name>UUID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_UUID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RoomID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RoomID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PlayAnswer</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_PlayAnswer</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        
+    </actionList>
+    <serviceStateTable>
+        <stateVariable sendEvents="yes">
+            <name>MatchStarted</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>HandStarted</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>TurnStarted</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>CardPlayed</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>TrucoAsked</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>TrucoAccepted</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>GaveUp</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>ElevenHand</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>IronHand</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>MatchFinished</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>TurnFinished</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>HandFinished</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_UUID</name>
+            <dataType>uuid</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_RoomID</name>
+            <dataType>int</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_CardID</name>
+            <dataType>i1</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_PlayAnswer</name>
+            <dataType>i1</dataType>
+        </stateVariable>
+    </serviceStateTable>
+</scpd>

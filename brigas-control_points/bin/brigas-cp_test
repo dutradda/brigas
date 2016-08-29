@@ -1,0 +1,112 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#
+#Este arquivo contém um script que inicializa
+# o Servidor com o serviço "GameManager"
+#
+
+#from brisa.core.reactors import install_default_reactor
+#reactor = install_default_reactor()
+
+from brisa.core.reactors import GLib2Reactor
+reactor = GLib2Reactor()
+
+from brisa.core.threaded_call import run_async_function
+
+from brisa_game_server.control_points.game_manager import GameManagerCP
+
+
+def run(cp):
+  """
+  Trata comandos passados para o programa
+
+  @param cp: referencia ControlPoint do GameManager
+  
+  @type  cp: GameManagerCP
+  """
+  while True:
+        try:
+            input = raw_input('>>> ')
+        except KeyboardInterrupt, EOFError:
+            break
+
+        if input == '':
+            print
+            continue
+
+        elif input == 'list':
+            print cp.servers.keys()
+
+        elif input == 'exit':
+            cp.leave_server()
+
+        elif input == 'uuid':
+            print cp.uuid
+
+        elif input == 'myserver':
+            print cp.my_server
+
+        elif input == 'mygame':
+            print cp.my_game
+
+        elif input == 'myroom':
+            print cp.my_room
+
+        elif input == 'games':
+            print cp.games.keys()
+
+        elif input == 'rooms':
+            print cp.my_game.keys()
+
+        elif input == 'leaveroom':
+            print cp.leave_room()
+
+        elif input.startswith('createroom'):
+            args = input.split(' ')
+            if len(args) > 1:
+              print cp.create_room(args[1])
+            else:
+              print cp.create_room(2)
+
+        elif input.startswith('joinroom'):
+            args = input.split(' ')
+            if len(args) > 1:
+              print cp.join_room(int(args[1]))
+            else:
+              print 'which room id?'
+
+        elif input.startswith('choosegame'):
+            args = input.split(' ')
+            if len(args) > 1:
+              print cp.choose_game(args[1])
+            else:
+              print 'which game?'
+
+        elif input.startswith('chooseserver'):
+            args = input.split(' ', 1)
+            if len(args) > 1:
+              print cp.choose_server(args[1])
+              #print args[1]
+            else:
+              print 'which server?'
+
+
+        elif input == 'help':
+            print 'Commands available: list, exit, ' \
+            'uuid, games, rooms, createroom N, joinroom N, ' \
+            'choosegame N, chooseserver N, help'
+
+  reactor.main_quit()
+
+if __name__ == "__main__":
+  cp = GameManagerCP()
+  # Inicializa serviço 'GameManager'
+  cp.start()
+  # Registra função 'stop' do 'GameManager' para quando entrar em estado 'stopped'
+  reactor.add_after_stop_func(cp.stop)
+  # Faz chamada assíncrona da função 'run' com parametro 'cp'
+  run_async_function(run, (cp, ))
+  # Entra no estato 'running'
+  reactor.main()
+

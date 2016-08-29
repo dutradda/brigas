@@ -1,0 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Importa e inicializa 'GameServerDevice'
+from brisa_game_server import GameServerDevice
+from sys import argv
+
+if __name__ == '__main__':
+  try:
+    gs = GameServerDevice(argv[1], '')
+  except:
+    gs = GameServerDevice("BRisa Game Server", '')
+  gs.start()
+

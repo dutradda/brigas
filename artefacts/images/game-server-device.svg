@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="520"
+   height="300"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="brigas-device.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/dda/projects/brigas/brigas-devices.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="391.57319"
+     inkscape:cy="191.74036"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="1249"
+     inkscape:window-height="937"
+     inkscape:window-x="312"
+     inkscape:window-y="37" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-59.500003,-46.071429)">
+    <rect
+       style="fill:#e6e6e6;fill-rule:evenodd;stroke:#000000;stroke-width:0.99496669px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect2383"
+       width="519.005"
+       height="299.00504"
+       x="59.997486"
+       y="46.568924" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="113.20717"
+       y="82.285721"
+       id="text2385"><tspan
+         sodipodi:role="line"
+         id="tspan2387"
+         x="113.20717"
+         y="82.285721">Game Server Device</tspan></text>
+    <rect
+       style="fill:#f5f5b7;fill-opacity:0.96078431"
+       id="rect3188"
+       width="491.86142"
+       height="224.25087"
+       x="73.663177"
+       y="98.857147" />
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="84.857147"
+       y="121.71428"
+       id="text3192"><tspan
+         sodipodi:role="line"
+         id="tspan3194"
+         x="84.857147"
+         y="121.71428">Services</tspan></text>
+    <g
+       id="g2445"
+       transform="translate(-4.969542,9.08886)">
+      <rect
+         y="131.69687"
+         x="86.355278"
+         height="158.57143"
+         width="220.00002"
+         id="rect3243"
+         style="fill:#aef5f5;fill-opacity:0.96078431" />
+      <text
+         id="text3245"
+         y="158.69365"
+         x="111.22881"
+         style="font-size:22px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="158.69365"
+           x="111.22881"
+           id="tspan3247"
+           sodipodi:role="line">Game Manager</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:justify;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="88.824028"
+         y="190.4855"
+         id="text3263"><tspan
+           sodipodi:role="line"
+           x="88.824028"
+           y="190.4855"
+           id="tspan3269">Gerencia todas as partidas</tspan><tspan
+           id="tspan3276"
+           sodipodi:role="line"
+           x="88.824028"
+           y="210.4855">em andamento, criação,</tspan><tspan
+           id="tspan3278"
+           sodipodi:role="line"
+           x="88.824028"
+           y="230.4855">remoção, entrada e saída</tspan><tspan
+           id="tspan3282"
+           sodipodi:role="line"
+           x="88.824028"
+           y="250.4855">de jogadores.</tspan></text>
+    </g>
+    <g
+       id="g2455"
+       transform="translate(8.162441,8.078712)">
+      <rect
+         style="fill:#aef5f5;fill-opacity:0.96078431"
+         id="rect2411"
+         width="220.00002"
+         height="158.57143"
+         x="328.7919"
+         y="132.70702" />
+      <text
+         id="text3251"
+         y="161.83612"
+         x="400.21671"
+         style="font-size:22px;font-style:normal;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="161.83612"
+           x="400.21671"
+           id="tspan3253"
+           sodipodi:role="line">Games</tspan></text>
+      <text
+         id="text3292"
+         y="201.61674"
+         x="330.43253"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:justify;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           id="tspan2413"
+           style="font-size:16px;text-align:justify;text-anchor:start"
+           y="201.61674"
+           x="330.43253"
+           sodipodi:role="line">Cada jogo existente no</tspan><tspan
+           id="tspan2415"
+           style="font-size:16px;text-align:justify;text-anchor:start"
+           y="221.61674"
+           x="330.43253"
+           sodipodi:role="line">servidor será representado</tspan><tspan
+           id="tspan2437"
+           style="font-size:16px;text-align:justify;text-anchor:start"
+           y="241.61674"
+           x="330.43253"
+           sodipodi:role="line">como serviço.</tspan></text>
+    </g>
+  </g>
+</svg>
